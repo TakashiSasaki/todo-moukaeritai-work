@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>todo-moukaeritai-work</title>
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="todo-moukaeritai-work" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <strong>todo-moukaeritai-work</strong>
+        <nav>
+          <a href="./index.html">トップ</a>
+          <a href="./about.html">このサイトについて</a>
+        </nav>
+        <button id="install" class="primary" hidden>インストール</button>
+      </div>
+    </header>
+    <main>
+      <h1>ホーム</h1>
+      <p>このサイトはモバイル端末にインストール可能な PWA テンプレートです。<code>docs/</code> 配下に配置すると GitHub Pages から公開されます。</p>
+      <ul>
+        <li><b>インストール可能:</b> マニフェスト + サービスワーカー</li>
+        <li><b>オフライン対応:</b> 初回アクセス後はトップをキャッシュ</li>
+        <li><b>通知:</b> インストール可能時にバナーを表示</li>
+      </ul>
+    </main>
+    <div id="install-banner" class="banner" hidden>
+      <span><b>インストール可能:</b> ホーム画面に追加してアプリとして利用できます。</span>
+      <button id="install-cta">インストール</button>
+      <button id="install-dismiss" class="close" aria-label="閉じる">×</button>
+    </div>
+    <div id="ios-banner" class="banner" hidden>
+      <span><b>iOS の方へ:</b> 共有メニュー → 「ホーム画面に追加」</span>
+      <button id="ios-dismiss" class="close" aria-label="閉じる">×</button>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite">インストールが完了しました</div>
+    <script src="./app.js"></script>
+  </body>
+  </html>

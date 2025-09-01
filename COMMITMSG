@@ -1,0 +1,18 @@
+feat(pwa): scaffold installable PWA template under docs
+
+- Add installable PWA pages: docs/index.html, docs/about.html, docs/404.html
+- Add manifest with domain-root scope/id/start_url (/) and JP metadata
+- Add service worker (docs/sw.js): precache core pages, offline fallback to /index.html
+- Add app shell assets: docs/styles.css, docs/app.js, docs/offline.html, docs/.nojekyll
+- Add placeholder PNG icons (180/192/512) and maskable entries in manifest
+- Add docs/README.md with usage/customization notes
+- Clarify public docs guidance in AGENTS.md
+
+Behavior
+- Android/Chromium: shows install banner (beforeinstallprompt) + Install button; caches top page
+- iOS: shows “Share → Add to Home Screen” banner; works standalone
+- Offline: navigations serve cached /index.html; fallback to /offline.html
+
+Notes
+- Everything under /docs is publicly served at https://todo.moukaeritai.work/
+- Bump CACHE_NAME in sw.js to invalidate old caches when changing assets
